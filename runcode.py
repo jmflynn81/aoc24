@@ -1,3 +1,5 @@
+#!/Users/c91253b/.pyenv/versions/aoc/bin/python
+
 import argparse
 from src.common.common import aoc
 
