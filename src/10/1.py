@@ -22,9 +22,6 @@ def pad(data):
 
 def get_true(poss, tick, data):
   new_poss = []
-  print(tick, poss)
-
-
   
   if tick == 9:
     for i in poss:
@@ -38,14 +35,12 @@ def get_true(poss, tick, data):
   return new_poss
 
 
-
 def main(data):
   total = 0
   data = pad(data)
   for y in range(len(data)):
     for x in range(len(data[y])):
       if data[y][x] == 0:
-        print(y, x)
         tick = 0
         poss = [[y-1, x], [y+1, x], [y, x-1], [y, x+1]]
         while tick !=9 and len(poss) != 0:
@@ -53,7 +48,6 @@ def main(data):
           poss = get_true(poss, tick, data)
         
         if poss:
-          print(set(tuple(i) for i in poss))
           total += len(set(tuple(i) for i in poss))
 
   return total
